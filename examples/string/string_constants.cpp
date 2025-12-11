@@ -3,30 +3,30 @@
 
 class StringConstants {
 public:
-	// 1. static const¸¦ »ç¿ëÇÑ ¼±¾ğ
-	// ÀÌ »ó¼ö´Â ¸ğµç ÀÎ½ºÅÏ½º¿¡¼­ °øÀ¯µË´Ï´Ù.
+	// 1. static constë¥¼ ì‚¬ìš©í•œ ì„ ì–¸
+	// ì´ ìƒìˆ˜ëŠ” ëª¨ë“  ì¸ìŠ¤í„´ìŠ¤ì—ì„œ ê³µìœ ë©ë‹ˆë‹¤.
 	static const std::string greeting_message;
 
-	// 2. constexpr¸¦ »ç¿ëÇÑ ¼±¾ğ
-	// ÄÄÆÄÀÏ Å¸ÀÓ¿¡ Æò°¡µÇ´Â »ó¼öÀÔ´Ï´Ù.
+	// 2. constexprë¥¼ ì‚¬ìš©í•œ ì„ ì–¸
+	// ì»´íŒŒì¼ íƒ€ì„ì— í‰ê°€ë˜ëŠ” ìƒìˆ˜ì…ë‹ˆë‹¤.
 	static constexpr const char* goodbye_message = "Goodbye, World!";
 
-	// 3. inlineÀ» »ç¿ëÇÑ ¼±¾ğ ¹× Á¤ÀÇ
-	// ¼±¾ğ°ú Á¤ÀÇ¸¦ µ¿½Ã¿¡ ÇÏ¸ç, Áßº¹ Á¤ÀÇ¸¦ ¹æÁöÇÕ´Ï´Ù.
+	// 3. inlineì„ ì‚¬ìš©í•œ ì„ ì–¸ ë° ì •ì˜
+	// ì„ ì–¸ê³¼ ì •ì˜ë¥¼ ë™ì‹œì— í•˜ë©°, ì¤‘ë³µ ì •ì˜ë¥¼ ë°©ì§€í•©ë‹ˆë‹¤.
 	static inline const std::string error_message = "An error has occurred.";
 	static inline const std::vector<std::string> fruit_list = { "apple", "banna", "cherry" };
 
-	// 4. constevalÀ» »ç¿ëÇÑ ¸Ş¼­µå
-	// ÄÄÆÄÀÏ Å¸ÀÓ¿¡ Æò°¡µÇ´Â ¸Ş¼­µåÀÔ´Ï´Ù.
+	// 4. constevalì„ ì‚¬ìš©í•œ ë©”ì„œë“œ
+	// ì»´íŒŒì¼ íƒ€ì„ì— í‰ê°€ë˜ëŠ” ë©”ì„œë“œì…ë‹ˆë‹¤.
 	static consteval const char* get_dynamic_greeting() {
 		return "Hello, from a dynamic context!";
 	}
 };
 
-// 1. static const¿¡ ´ëÇÑ Á¤ÀÇ
+// 1. static constì— ëŒ€í•œ ì •ì˜
 const std::string StringConstants::greeting_message = "Hello, World!";
 
-// »ç¿ë ¿¹½Ã
+// ì‚¬ìš© ì˜ˆì‹œ
 #include <iostream>
 
 int main() {
