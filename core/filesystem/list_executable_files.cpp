@@ -13,7 +13,7 @@ int main()
 
     if (!std::filesystem::exists(path) || !std::filesystem::is_directory(path)) {
         std::cerr << "Invalid directory path!" << std::endl;
-        return 1; // 유효하지 않은 경로에 대해 오류 코드 반환
+        return 1;
     }
 
     auto executable_files = std::filesystem::recursive_directory_iterator(path)

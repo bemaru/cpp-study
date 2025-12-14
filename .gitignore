@@ -1,0 +1,28 @@
+# C++ build artifacts
+*.exe
+*.obj
+*.o
+*.pdb
+*.ilk
+*.idb
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# Visual Studio
+*.vc.db
+*.opendb
+*.suo
+*.user
+*.sdf
+.vs/
+
+# Build directories
+build/
+out/
+bin/
+
+# claude
+.claude

@@ -15,7 +15,6 @@
  * for std::string or std::wstring alternatives.
  */
 
-#include "stdafx.h"
 #include <locale>
 #include <atlstr.h>
 

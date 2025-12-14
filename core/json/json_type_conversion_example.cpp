@@ -8,7 +8,7 @@ int main() {
         "intValue": 42,
         "floatValue": 3.14,
         "stringValue": "Hello",
-        "boolValue": true,
+        "boolValue": true
     })";
 
     Json::CharReaderBuilder reader;
