@@ -46,7 +46,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	locale::global(locale(""));
 
 	// Example: Hash a file path (case-insensitive)
-	CString str = R"(C:\Users\user\Desktop\test_file.png)";
+	CString str = "helloworld";
 	str.MakeLower();
 
 	// Display the string and its hash value
