@@ -3,31 +3,7 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++.exe build active file (c++17)",
-            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-std=c++17",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\build\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            },
-            "detail": "Build with g++ to build/ subdirectory"
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: g++.exe build active file (c++20)",
+            "label": "C/C++: g++.exe build active file",
             "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
@@ -47,7 +23,23 @@
                 "kind": "build",
                 "isDefault": false
             },
-            "detail": "Build with g++ (C++20) to build/ subdirectory"
+            "detail": "Build with g++ to build/ subdirectory"
+        },
+        {
+            "type": "shell",
+            "label": "Create build directory",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "if (!(Test-Path '${fileDirname}\\build')) { New-Item -ItemType Directory -Path '${fileDirname}\\build' -Force }"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared"
+            }
         },
         {
             "type": "shell",
@@ -59,6 +51,9 @@
                 "/std:c++17",
                 "/I",
                 "${env:USERPROFILE}\\vcpkg\\installed\\x64-windows\\include",
+                "/Fo:${fileDirname}\\build\\",
+                "/Fe:${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+                "/Fd:${fileDirname}\\build\\",
                 "${fileBasename}",
                 "/link",
                 "/LIBPATH:${env:USERPROFILE}\\vcpkg\\installed\\x64-windows\\lib",
@@ -72,7 +67,8 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "MSVC build to build/ subdirectory with vcpkg support"
+            "detail": "MSVC build to build/ subdirectory with vcpkg support",
+            "dependsOn": ["Create build directory"]
         }
     ]
 }
