@@ -57,7 +57,8 @@
                 "${fileBasename}",
                 "/link",
                 "/LIBPATH:${env:USERPROFILE}\\vcpkg\\installed\\x64-windows\\lib",
-                "jsoncpp.lib"
+                "jsoncpp.lib",
+                "advapi32.lib"
             ],
             "options": {
                 "cwd": "${fileDirname}"
